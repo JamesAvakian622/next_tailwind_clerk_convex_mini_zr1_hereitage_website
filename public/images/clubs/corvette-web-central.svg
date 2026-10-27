@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Corvette-Web-Central">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="1a3d1a"/>
+      <stop offset="60%" stop-color="0f2a0f"/>
+      <stop offset="100%" stop-color="3a3a3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="400" fill="url(bg)"/>
+  <rect x="40" y="40" width="180" height="40" fill="D0202E"/>
+  <text x="130" y="68" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="22" fill="fff">SCAN CORVETTE</text>
+  <g transform="translate(40,140) skewX(-8)">
+    <rect width="820" height="120" fill="fff" stroke="bbb" stroke-width="2"/>
+    <text x="410" y="92" text-anchor="middle" font-family="'Times New Roman', Georgia, serif" font-weight="900" font-size="78" fill="D0202E" letter-spacing="2">CORVETTE-WEB-CENTRAL</text>
+  </g>
+  <rect x="0" y="280" width="900" height="20" fill="888"/>
+  <text x="450" y="365" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="e5e7eb">Get the info, inspiration &amp; more</text>
+</svg>

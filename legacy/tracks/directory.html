@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Track Directory — All 50 States — MyZR1</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      .state-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+      }
+      .state-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px 14px;
+        transition: border-color 0.2s;
+      }
+      .state-card:hover {
+        border-color: var(--accent);
+        text-decoration: none;
+      }
+      .state-card .state-code {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        display: block;
+      }
+      .state-card .state-name {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .state-card .region-badge {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-top: 4px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-brand"
+          ><img
+            src="../public/CoolJimmy.png"
+            alt=""
+            onerror="this.style.display = 'none'"
+          />MyZR1 - MyZR1X</a
+        >
+        <div class="nav-links">
+          <a href="../zr1/index.html">ZR1</a
+          ><a href="../rarity/index.html">Rarity</a
+          ><a href="../engine/index.html">Engine</a
+          ><a href="../body/index.html">Body</a
+          ><a href="../service/index.html">Service</a
+          ><a href="../gallery/index.html">Gallery</a
+          ><a href="../mods/index.html">Mods</a
+          ><a href="index.html" class="active">Tracks</a
+          ><a href="../about/index.html">About</a>
+        </div>
+        <div class="nav-right">
+          <a href="../about/index.html" class="btn btn-outline">Sign In</a
+          ><a href="../about/index.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> › <a href="index.html">Tracks</a> ›
+      <span>Directory</span>
+    </div>
+
+    <div class="page-hero">
+      <img
+        class="hero-bg"
+        src="../public/chevy-racing.png"
+        alt="Track Directory"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-tag">All 50 States</div>
+        <h1>USA Race Track Directory</h1>
+        <p>
+          Browse race tracks across all 50 states — road courses, ovals, drag
+          strips, kart tracks, and driving schools. Every listing includes
+          surface type, shape, spectator and drive-your-car flags.
+        </p>
+        <div class="hero-ctas">
+          <a href="featured.html" class="btn btn-primary">Featured Regions →</a
+          ><a href="index.html" class="btn btn-outline">Tracks Home</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar"></div>
+          <h2>Featured Track Listings</h2>
+        </div>
+        <div class="card-grid">
+          <a href="featured.html#tennessee-kentucky" class="card">
+            <img class="card-img" src="../public/ncm-park.png" alt="NCM" />
+            <div class="card-body">
+              <span class="card-tag tag-green">Bowling Green, KY</span>
+              <h3>NCM Motorsports Park</h3>
+              <p>
+                3.15 mi · Paved road course · HPDE &amp; club · Spectator &amp;
+                drive-your-car · Adjacent to National Corvette Museum
+              </p>
+            </div>
+          </a>
+          <a href="featured.html#california" class="card">
+            <img
+              class="card-img"
+              src="../public/driving-fast.png"
+              alt="Laguna Seca"
+              onerror="this.src = '../public/chevy-racing.png'"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-blue">Monterey, CA</span>
+              <h3>WeatherTech Laguna Seca</h3>
+              <p>
+                2.238 mi · Paved road course · HPDE &amp; pro events · Spectator
+                &amp; drive-your-car · Iconic Corkscrew corner
+              </p>
+            </div>
+          </a>
+          <a href="featured.html#florida" class="card">
+            <img
+              class="card-img"
+              src="../public/drive.png"
+              alt="Daytona"
+              onerror="this.src = '../public/chevy-racing.png'"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-orange">Daytona Beach, FL</span>
+              <h3>Daytona International Speedway</h3>
+              <p>
+                2.5 mi · Paved tri-oval &amp; road · NASCAR &amp; IMSA · Major
+                spectator destination
+              </p>
+            </div>
+          </a>
+          <a href="featured.html#north-carolina" class="card">
+            <img
+              class="card-img"
+              src="../public/chevy-racing.png"
+              alt="Charlotte Motor Speedway"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-purple">Concord, NC</span>
+              <h3>Charlotte Motor Speedway</h3>
+              <p>
+                1.5 mi · Paved oval · NASCAR complex with zMAX Dragway · Major
+                spectator venue
+              </p>
+            </div>
+          </a>
+          <a href="featured.html#new-york" class="card">
+            <img
+              class="card-img"
+              src="../public/driving1.png"
+              alt="Watkins Glen"
+              onerror="this.src = '../public/chevy-racing.png'"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-blue">Watkins Glen, NY</span>
+              <h3>Watkins Glen International</h3>
+              <p>
+                3.4 mi · Paved road course · NASCAR &amp; IMSA · Spectator &amp;
+                drive-your-car
+              </p>
+            </div>
+          </a>
+          <a href="featured.html#ohio" class="card">
+            <img
+              class="card-img"
+              src="../public/drive.png"
+              alt="Mid-Ohio"
+              onerror="this.src = '../public/chevy-racing.png'"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-green">Lexington, OH</span>
+              <h3>Mid-Ohio Sports Car Course</h3>
+              <p>
+                2.258 mi · Paved road course · HPDE &amp; club · Spectator &amp;
+                drive-your-car
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="drivers" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar orange"></div>
+          <h2>Drivers Directory</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <img
+              class="card-img"
+              src="../public/five-drivers.png"
+              alt="Jesse Iwuji"
+              onerror="this.src = '../public/chevy-racing.png'"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-blue">NASCAR</span>
+              <h3>Jesse Iwuji</h3>
+              <p>
+                NASCAR competitor and performance educator — PTM Pro and Launch
+                Control walkthroughs featured on MyZR1 for C8 ZR1 owners.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card-img"
+              src="../public/chevy-racing.png"
+              alt="Corvette Racing"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-orange">IMSA / GT</span>
+              <h3>Corvette Racing</h3>
+              <p>
+                Chevrolet's factory GT program — endurance racing from C5-R
+                through C8.R and Z06 GT3.R worldwide.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="../public/ncm-park.png" alt="NCM HPDE" />
+            <div class="card-body">
+              <span class="card-tag tag-green">HPDE</span>
+              <h3>NCM Driving Club</h3>
+              <p>
+                Drive-your-car programs at NCM Motorsports Park — the core ZR1
+                owner track day community.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card-img"
+              src="../public/driving-fast.png"
+              alt="Hagerty"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-purple">Enthusiast</span>
+              <h3>Hagerty Drivers Club</h3>
+              <p>
+                Collector-car drivers — tour events, garage stories, and road
+                culture for ZR1 and ZR1X owners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar purple"></div>
+          <h2>All 50 States</h2>
+          <p>
+            Click any state to browse its tracks — links to featured.html where
+            detailed guides are available
+          </p>
+        </div>
+        <div class="state-grid">
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">AL</span
+            ><span class="state-name">Alabama</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">AK</span
+            ><span class="state-name">Alaska</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">AZ</span
+            ><span class="state-name">Arizona</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">AR</span
+            ><span class="state-name">Arkansas</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a
+            href="featured.html#california"
+            class="state-card"
+            style="border-color: var(--accent)"
+            ><span class="state-code">CA ★</span
+            ><span class="state-name">California</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">CO</span
+            ><span class="state-name">Colorado</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">CT</span
+            ><span class="state-name">Connecticut</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">DE</span
+            ><span class="state-name">Delaware</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a
+            href="featured.html#florida"
+            class="state-card"
+            style="border-color: var(--orange)"
+            ><span class="state-code">FL ★</span
+            ><span class="state-name">Florida</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">GA</span
+            ><span class="state-name">Georgia</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">HI</span
+            ><span class="state-name">Hawaii</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">ID</span
+            ><span class="state-name">Idaho</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a
+            href="featured.html#chicago"
+            class="state-card"
+            style="border-color: var(--green)"
+            ><span class="state-code">IL ★</span
+            ><span class="state-name">Illinois</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North · Chicago</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">IN</span
+            ><span class="state-name">Indiana</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">IA</span
+            ><span class="state-name">Iowa</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">KS</span
+            ><span class="state-name">Kansas</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a
+            href="featured.html#tennessee-kentucky"
+            class="state-card"
+            style="border-color: var(--green)"
+            ><span class="state-code">KY ★</span
+            ><span class="state-name">Kentucky</span
+            ><span class="region-badge" style="color: var(--green)"
+              >South · NCM</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">LA</span
+            ><span class="state-name">Louisiana</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">ME</span
+            ><span class="state-name">Maine</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MD</span
+            ><span class="state-name">Maryland</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MA</span
+            ><span class="state-name">Massachusetts</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MI</span
+            ><span class="state-name">Michigan</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MN</span
+            ><span class="state-name">Minnesota</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MS</span
+            ><span class="state-name">Mississippi</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MO</span
+            ><span class="state-name">Missouri</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">MT</span
+            ><span class="state-name">Montana</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">NE</span
+            ><span class="state-name">Nebraska</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">NV</span
+            ><span class="state-name">Nevada</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">NH</span
+            ><span class="state-name">New Hampshire</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">NJ</span
+            ><span class="state-name">New Jersey</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">NM</span
+            ><span class="state-name">New Mexico</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a
+            href="featured.html#new-york"
+            class="state-card"
+            style="border-color: var(--purple)"
+            ><span class="state-code">NY ★</span
+            ><span class="state-name">New York</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East · Featured</span
+            ></a
+          >
+          <a
+            href="featured.html#north-carolina"
+            class="state-card"
+            style="border-color: var(--orange)"
+            ><span class="state-code">NC ★</span
+            ><span class="state-name">North Carolina</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">ND</span
+            ><span class="state-name">North Dakota</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a
+            href="featured.html#ohio"
+            class="state-card"
+            style="border-color: var(--green)"
+            ><span class="state-code">OH ★</span
+            ><span class="state-name">Ohio</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">OK</span
+            ><span class="state-name">Oklahoma</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">OR</span
+            ><span class="state-name">Oregon</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">PA</span
+            ><span class="state-name">Pennsylvania</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">RI</span
+            ><span class="state-name">Rhode Island</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a
+            href="featured.html#south-carolina"
+            class="state-card"
+            style="border-color: var(--orange)"
+            ><span class="state-code">SC ★</span
+            ><span class="state-name">South Carolina</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">SD</span
+            ><span class="state-name">South Dakota</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North</span
+            ></a
+          >
+          <a
+            href="featured.html#tennessee-kentucky"
+            class="state-card"
+            style="border-color: var(--orange)"
+            ><span class="state-code">TN ★</span
+            ><span class="state-name">Tennessee</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South · Featured</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">TX</span
+            ><span class="state-name">Texas</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">UT</span
+            ><span class="state-name">Utah</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">VT</span
+            ><span class="state-name">Vermont</span
+            ><span class="region-badge" style="color: var(--purple)"
+              >East</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">VA</span
+            ><span class="state-name">Virginia</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">WA</span
+            ><span class="state-name">Washington</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">WV</span
+            ><span class="state-name">West Virginia</span
+            ><span class="region-badge" style="color: var(--orange)"
+              >South</span
+            ></a
+          >
+          <a
+            href="featured.html#chicago"
+            class="state-card"
+            style="border-color: var(--green)"
+            ><span class="state-code">WI ★</span
+            ><span class="state-name">Wisconsin</span
+            ><span class="region-badge" style="color: var(--green)"
+              >North · Chicago</span
+            ></a
+          >
+          <a href="featured.html" class="state-card"
+            ><span class="state-code">WY</span
+            ><span class="state-name">Wyoming</span
+            ><span class="region-badge" style="color: var(--accent)"
+              >West</span
+            ></a
+          >
+        </div>
+        <p style="color: var(--muted); font-size: 0.78rem; margin-top: 16px">
+          ★ = Featured region with detailed track guide available
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-bottom">
+          <span class="copyright"
+            >© 2026 MyZR1 - MyZR1X — Optical Automation LLC</span
+          >
+          <div class="footer-legal-links">
+            <a href="../index.html">Home</a><a href="index.html">Tracks</a
+            ><a href="featured.html">Regions →</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

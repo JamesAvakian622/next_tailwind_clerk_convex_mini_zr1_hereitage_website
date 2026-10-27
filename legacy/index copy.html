@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>MyZR1 - MyZR1X — Corvette ZR1 Heritage & Collection</title>
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .obj-top {
+        object-position: top;
+      }
+      .text-purple {
+        color: var(--purple);
+      }
+      .home-hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background: #000;
+      }
+      .home-hero img.hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        filter: brightness(0.65);
+      }
+      .home-hero .overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(4, 26, 61, 0.55) 0%,
+          rgba(0, 0, 0, 0.72) 100%
+        );
+      }
+      .home-hero .hc {
+        position: relative;
+        z-index: 2;
+        padding: 40px 24px;
+        max-width: 820px;
+      }
+      .home-hero .pre-tag {
+        display: inline-block;
+        background: rgba(184, 232, 252, 0.18);
+        color: #b8e8fc;
+        border: 1px solid rgba(184, 232, 252, 0.35);
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        padding: 5px 18px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+      }
+      .home-hero h1 {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        font-weight: 950;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        line-height: 0.95;
+        background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+      }
+      .home-hero h2 {
+        font-size: clamp(1.1rem, 2.5vw, 1.9rem);
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 18px;
+      }
+      .home-hero p {
+        font-size: 0.97rem;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 560px;
+        margin: 0 auto 34px;
+      }
+      .home-ctas {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .home-ctas a {
+        padding: 14px 36px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        transition: all 0.25s;
+      }
+      .cta-p {
+        background: var(--accent);
+        color: #000;
+      }
+      .cta-p:hover {
+        background: #7dd3fc;
+        color: #000;
+        transform: translateY(-2px);
+      }
+      .cta-s {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .cta-s:hover {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+      }
+      .slide-dots {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 5;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.35);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .dot.active {
+        background: var(--accent);
+        width: 28px;
+        border-radius: 5px;
+      }
+      /* section cards */
+      .section-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 22px;
+      }
+      .sec-card {
+        display: block;
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+        background: var(--card);
+      }
+      .sec-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+        color: inherit;
+      }
+      .sec-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      .sec-card .sc-body {
+        padding: 18px;
+      }
+      .sec-card .sc-tag {
+        font-size: 0.68rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 6px;
+        display: block;
+      }
+      .sec-card h3 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .sec-card p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+      .sec-card .arrow {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      /* gen grid */
+      .gen-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .gen-card {
+        display: block;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .gen-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+      }
+      .gen-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .gen-card .gc-body {
+        padding: 14px;
+      }
+      .gen-card .year {
+        font-size: 0.68rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .gen-card h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .gen-card p {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+          <img
+            src="public/CoolJimmy.png"
+            alt="Cool Jimmy"
+            onerror="this.style.display = 'none'"
+          />
+          MyZR1 - MyZR1X
+        </a>
+        <div class="nav-links">
+          <a href="zr1/index.html">ZR1</a>
+          <a href="rarity/index.html">Rarity</a>
+          <a href="engine/index.html">Engine</a>
+          <a href="body/index.html">Body</a>
+          <a href="service/index.html">Service</a>
+          <a href="gallery/index.html">Gallery</a>
+          <a href="mods/index.html">Mods 🛠️</a>
+          <a href="tracks/index.html">Tracks</a>
+          <a href="about/index.html">About</a>
+          <a href="glossary.html">Glossary</a>
+          <a href="sitemap/index.html">Sitemap</a>
+        </div>
+        <div class="nav-right">
+          <a href="about/index.html" class="btn btn-outline">Sign In</a>
+          <a href="about/index.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="home-hero">
+      <img
+        class="hero-bg"
+        src="public/assets/c8-zr1-2026.png"
+        alt="C8 ZR1 2026"
+        onerror="this.src = 'public/c8-zr1x.png'"
+      />
+      <div class="overlay"></div>
+      <div class="hc">
+        <div class="pre-tag">
+          Pre-Release Ver 0.5 — Confidential Access Only
+        </div>
+        <h1>Corvette ZR1 &amp; ZR1X</h1>
+        <h2>Celebrate the Corvette ZR1 Platform</h2>
+        <p>
+          From the legendary 1970 C3 to the electrified 2026 ZR1X Hypercar —
+          photo galleries, rarity guides, engineering deep-dives, performance
+          mods, and owner albums.
+        </p>
+        <div class="home-ctas">
+          <a href="zr1/index.html" class="cta-p">Enter Collection</a>
+          <a href="gallery/index.html" class="cta-s">Browse Gallery</a>
+        </div>
+      </div>
+      <div class="slide-dots">
+        <button class="dot active" title="Slide 1"></button
+        ><button class="dot" title="Slide 2"></button>
+        <button class="dot" title="Slide 3"></button
+        ><button class="dot" title="Slide 4"></button>
+      </div>
+    </section>
+
+    <!-- SITE SECTIONS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar"></div>
+          <h2>Explore the Site</h2>
+          <p>Every section of MyZR1 - MyZR1X at a glance</p>
+        </div>
+        <div class="section-cards">
+          <a href="zr1/index.html" class="sec-card">
+            <img
+              src="public/c8-zr1.png"
+              alt="ZR1 Collection"
+              onerror="this.src = 'public/horse.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">ZR1 Index</span>
+              <h3>The Complete ZR1 Collection</h3>
+              <p>
+                C3 through C8 ZR1X — every generation, heritage timeline, and
+                generation photo pages.
+              </p>
+              <span class="arrow">Explore ZR1 →</span>
+            </div>
+          </a>
+          <a href="rarity/index.html" class="sec-card">
+            <img
+              src="public/assets/stars-stripes-c8-zr1-2026.png"
+              alt="Rarity Guide"
+              onerror="this.src = 'public/c8-zr1x.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Rarity</span>
+              <h3>Rarity Guide &amp; Market Value</h3>
+              <p>
+                Collector scores, market forecasts, special editions, and
+                enthusiast clubs.
+              </p>
+              <span class="arrow">View Rarity →</span>
+            </div>
+          </a>
+          <a href="engine/index.html" class="sec-card">
+            <img
+              src="public/engine-lt7-c8.png"
+              alt="LT7 engine"
+              onerror="this.src = 'public/LT7.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Engine &amp; Tech</span>
+              <h3>LT7 engineTwin-Turbo &amp; Drivetrain</h3>
+              <p>
+                Deep dives into the 1,064 HP LT7, turbos, ECU, DCT, E-AWD, and
+                driving dynamics.
+              </p>
+              <span class="arrow">View Engine →</span>
+            </div>
+          </a>
+          <a href="body/index.html" class="sec-card">
+            <img
+              src="public/aerodynamics.png"
+              alt="Body & Aerodynamics"
+              onerror="this.src = 'public/assets/c8-zr1-2026.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Body</span>
+              <h3>Exterior, Interior &amp; Specs</h3>
+              <p>
+                Aerodynamics, suspension, brakes, wheels, carbon ceramic, and
+                the redesigned interior.
+              </p>
+              <span class="arrow">View Body →</span>
+            </div>
+          </a>
+          <a href="service/index.html" class="sec-card">
+            <img
+              src="public/assets/maintenance.png"
+              alt="Maintenance"
+              onerror="this.src = 'public/clean.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Service</span>
+              <h3>Maintenance &amp; Owner Guides</h3>
+              <p>
+                Fluids, schedules, DCT filter, warranty, certified mechanics,
+                and collector care.
+              </p>
+              <span class="arrow">View Service →</span>
+            </div>
+          </a>
+          <a href="gallery/index.html" class="sec-card">
+            <img
+              src="public/chevy-racing.png"
+              alt="Gallery"
+              onerror="this.src = 'public/c8-zr1.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Gallery</span>
+              <h3>Photo Albums &amp; Corvette Racing</h3>
+              <p>
+                Generation albums, factory racing cars C4-GTP through Z06 GT3.R,
+                and owners gallery.
+              </p>
+              <span class="arrow">View Gallery →</span>
+            </div>
+          </a>
+          <a href="mods/index.html" class="sec-card">
+            <img
+              src="public/assets/zr1x-side.png"
+              alt="Mods"
+              onerror="this.src = 'public/c8-zr1x.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Mods 🛠️</span>
+              <h3>ZR1 &amp; ZR1X Modifications</h3>
+              <p>
+                Performance tuning, handling, active aero, cooling, displays,
+                and aesthetic mods.
+              </p>
+              <span class="arrow">View Mods →</span>
+            </div>
+          </a>
+          <a href="tracks/index.html" class="sec-card">
+            <img
+              src="public/ncm-park.png"
+              alt="Race Tracks"
+              onerror="this.src = 'public/chevy-racing.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">Tracks</span>
+              <h3>USA National Race Directory</h3>
+              <p>
+                All 50 states, featured regional maps, driver directory, and NCM
+                Motorsports Park.
+              </p>
+              <span class="arrow">View Tracks →</span>
+            </div>
+          </a>
+          <a href="about/index.html" class="sec-card">
+            <img
+              src="public/CoolJimmy.png"
+              alt="About"
+              class="obj-top"
+              onerror="this.src = 'public/opauto.png'"
+            />
+            <div class="sc-body">
+              <span class="sc-tag">About Us</span>
+              <h3>Cool Jimmy &amp; Optical Automation</h3>
+              <p>
+                About the site, glossary, mobile apps, contact, special thanks,
+                docs, and downloads.
+              </p>
+              <span class="arrow">About Us →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENERATIONS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar purple"></div>
+          <h2>Legacy Across Eras</h2>
+          <p>Every ZR1 generation — from 1970 to 2026+</p>
+        </div>
+        <div class="gen-grid">
+          <a href="zr1/c3.html" class="gen-card">
+            <img
+              src="public/engine-lt1-c3.png"
+              alt="C3 ZR1"
+              onerror="this.src = 'public/c3-zr1.png'"
+            />
+            <div class="gc-body">
+              <span class="year">1970–1972</span>
+              <h4>C3 ZR1 — The Origin</h4>
+              <p>370 HP LT1 small-block that started it all.</p>
+            </div>
+          </a>
+          <a href="zr1/c4.html" class="gen-card">
+            <img
+              src="public/engine-lt5-c4.png"
+              alt="C4 ZR-1"
+              onerror="this.src = 'public/c4-zr1.png'"
+            />
+            <div class="gc-body">
+              <span class="year">1990–1995</span>
+              <h4>C4 ZR-1 — King of the Hill</h4>
+              <p>Lotus-engineered LT5 DOHC V8, 405 HP.</p>
+            </div>
+          </a>
+          <a href="zr1/c6.html" class="gen-card">
+            <img
+              src="public/engine-ls9-c6.png"
+              alt="C6 ZR1"
+              onerror="this.src = 'public/c6-zr1.png'"
+            />
+            <div class="gc-body">
+              <span class="year">2009–2013</span>
+              <h4>C6 ZR1 — Blue Devil</h4>
+              <p>638 HP supercharged LS9, 205 mph.</p>
+            </div>
+          </a>
+          <a href="zr1/c7.html" class="gen-card">
+            <img
+              src="public/engine-lt5-c7.png"
+              alt="C7 ZR1"
+              onerror="this.src = 'public/c7-zr1.png'"
+            />
+            <div class="gc-body">
+              <span class="year">2019</span>
+              <h4>C7 ZR1 — Peak Front-Engine</h4>
+              <p>755 HP supercharged LT5, final front-engine ZR1.</p>
+            </div>
+          </a>
+          <a href="zr1/c8.html" class="gen-card">
+            <img src="public/c8-zr1.png" alt="C8 ZR1" />
+            <div class="gc-body">
+              <span class="year">2025–2027</span>
+              <h4>C8 ZR1 — Modern Legend</h4>
+              <p>1,064 HP LT7 engineTwin-Turbo mid-engine revolution.</p>
+            </div>
+          </a>
+          <a href="zr1/zr1x.html" class="gen-card">
+            <img src="public/c8-zr1x.png" alt="C8 ZR1X" />
+            <div class="gc-body">
+              <span class="year text-purple">2026+</span>
+              <h4>C8 ZR1X — The Hypercar</h4>
+              <p>Hybrid AWD, 1,250+ HP electrified hypercar.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK IMAGE HIGHLIGHTS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="bar orange"></div>
+          <h2>Featured Highlights</h2>
+          <p>Key technology and performance moments</p>
+        </div>
+        <div class="three-col">
+          <a href="engine/lt7.html" class="card">
+            <img
+              class="card-img"
+              src="public/engine-lt7-c8.png"
+              alt="LT7 engine"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-blue">Engine</span>
+              <h3>LT7 engineTwin-Turbo V8</h3>
+              <p>
+                Flat-plane crank, dual-port injection, 1,064 HP — the most
+                powerful Corvette engine ever built.
+              </p>
+              <span class="card-link">Learn More</span>
+            </div>
+          </a>
+          <a href="engine/turbos.html" class="card">
+            <img class="card-img" src="public/turbo.png" alt="Turbos" />
+            <div class="card-body">
+              <span class="card-tag tag-orange">Turbos</span>
+              <h3>Largest Turbos Ever on a Corvette</h3>
+              <p>
+                Twin turbos feeding the LT7's 5.5L flat-plane V8 for massive
+                low-end torque and top-end power.
+              </p>
+              <span class="card-link">Learn More</span>
+            </div>
+          </a>
+          <a href="body/exterior.html" class="card">
+            <img
+              class="card-img"
+              src="public/aerodynamics.png"
+              alt="Aerodynamics"
+            />
+            <div class="card-body">
+              <span class="card-tag tag-purple">Aero</span>
+              <h3>Active Aerodynamics</h3>
+              <p>
+                1,000+ lb of downforce at speed via active aero elements, front
+                splitter, and rear wing.
+              </p>
+              <span class="card-link">Learn More</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img
+            src="public/CoolJimmy-footer.png"
+            alt="Cool Jimmy"
+            onerror="this.style.display = 'none'"
+          />
+          <h2>My ZR1 / My ZR1X Corvette</h2>
+          <p>
+            An Optical Automation Product — celebrating Chevrolet Corvette ZR1
+            heritage from C3 to C8 ZR1X.
+          </p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h3>ZR1</h3>
+            <a href="zr1/index.html">ZR1 Collection</a
+            ><a href="zr1/c3.html">C3 ZR1</a><a href="zr1/c4.html">C4 ZR-1</a
+            ><a href="zr1/c6.html">C6 ZR1</a><a href="zr1/c7.html">C7 ZR1</a
+            ><a href="zr1/c8.html">C8 ZR1</a><a href="zr1/zr1x.html">C8 ZR1X</a
+            ><a href="zr1/timeline.html">Timeline</a>
+          </div>
+          <div class="footer-col">
+            <h3>Tech</h3>
+            <a href="engine/index.html">Engine Hub</a
+            ><a href="engine/lt7.html">LT7 engine</a
+            ><a href="engine/turbos.html">Turbos</a
+            ><a href="engine/drivetrain.html">Drivetrain</a
+            ><a href="engine/driving.html">Driving</a
+            ><a href="body/index.html">Body</a
+            ><a href="body/exterior.html">Exterior</a
+            ><a href="body/interior.html">Interior</a>
+          </div>
+          <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="rarity/index.html">Rarity Guide</a
+            ><a href="gallery/index.html">Gallery</a
+            ><a href="mods/index.html">Mods</a
+            ><a href="tracks/index.html">Tracks</a
+            ><a href="service/index.html">Service</a
+            ><a href="about/index.html">About Us</a
+            ><a href="glossary.html">Glossary</a
+            ><a href="sitemap/index.html">Sitemap</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="copyright"
+            >© 2026 MyZR1 - MyZR1X, Optical Automation LLC. All rights
+            reserved.</span
+          >
+          <div class="footer-legal-links">
+            <a href="about/index.html#terms">Terms</a>
+            <a href="about/index.html#privacy">Privacy</a>
+            <a href="about/index.html#cookies">Cookies</a>
+          </div>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/profile.php?id=100091998258369"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/javakian2025"
+              target="_blank"
+              rel="noopener"
+              aria-label="X"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

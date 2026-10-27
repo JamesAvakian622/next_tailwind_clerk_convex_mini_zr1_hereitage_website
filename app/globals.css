@@ -1,0 +1,17 @@
+/*
+ * Tailwind v4 without Preflight: the site's own reset + theme live in
+ * styled-components (components/GlobalStyle.tsx), so we only pull in the
+ * theme tokens and utilities.
+ */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme inline {
+  --color-bg: #0a0e17;
+  --color-nav: #041a3d;
+  --color-card: #111827;
+  --color-card2: #0d1520;
+  --color-accent: #38bdf8;
+  --color-purple: #a855f7;
+  --color-muted: #94a3b8;
+}
