@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ),
   icons: { icon: "/favicon.ico" },
+  authors: [{ name: "Cool Jimmy, Optical Automation, LLC" }],
+  creator: "Cool Jimmy, Optical Automation, LLC",
+  publisher: "Optical Automation, LLC",
+  other: {
+    copyright: "© Cool Jimmy, Optical Automation, LLC. All rights reserved.",
+  },
 };
 
 export default function RootLayout({

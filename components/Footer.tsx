@@ -188,7 +188,8 @@ export default function Footer() {
         </Cols>
         <Bottom>
           <Copyright>
-            © 2026 MyZR1 - MyZR1X, Optical Automation LLC. All rights reserved.
+            © {new Date().getFullYear()} Cool Jimmy, Optical Automation, LLC.
+            All rights reserved.
           </Copyright>
           <Legal>
             <Link href="/terms">Terms</Link>

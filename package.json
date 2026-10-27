@@ -2,6 +2,8 @@
   "name": "myzr1-myzr1x",
   "version": "0.5.0",
   "private": true,
+  "author": "Cool Jimmy, Optical Automation, LLC",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
