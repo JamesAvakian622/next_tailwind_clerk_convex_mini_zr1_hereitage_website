@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Track Directory — All 50 States — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "Track Directory — All 50 States — MyZR1",
+  "Browse race tracks across all 50 states — road courses, ovals, drag strips, kart tracks, and driving schools. Every listing includes surface type, shape…",
+);
 
 const css = `
 .state-grid {

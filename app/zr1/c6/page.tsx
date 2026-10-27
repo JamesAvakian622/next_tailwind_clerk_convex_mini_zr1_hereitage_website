@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "C6 ZR1 (2009–2013) — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "C6 ZR1 (2009–2013) — MyZR1",
+  "638 HP supercharged LS9 V8, carbon-ceramic brakes, carbon-fiber body panels, and a 205 mph top speed. The Blue Devil proved American engineering could…",
+);
 
 const css = `
 .muted-text-mb14 {

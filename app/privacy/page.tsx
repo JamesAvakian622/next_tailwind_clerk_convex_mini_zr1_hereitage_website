@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import PolicyPage, { Section } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How MyZR1 - MyZR1X (Optical Automation, LLC) collects, uses, stores, and shares your information.",
-};
+export const metadata: Metadata = pageMeta(
+  "Privacy Policy",
+  "How MyZR1 - MyZR1X (Optical Automation, LLC) collects, uses, stores, and shares your information.",
+);
 
 export default function PrivacyPage() {
   return (

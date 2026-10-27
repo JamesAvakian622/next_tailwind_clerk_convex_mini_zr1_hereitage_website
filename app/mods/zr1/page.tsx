@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "ZR1 Mods — MyZR1 Modifications" };
+export const metadata: Metadata = pageMeta(
+  "ZR1 Mods — MyZR1 Modifications",
+  "Performance tuning, handling, active aero, cooling, electronic displays, battery, and aesthetic modifications for the C8 ZR1 platform.",
+);
 
 export default function Page() {
   return (

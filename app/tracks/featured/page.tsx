@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Featured Regional Track Maps — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "Featured Regional Track Maps — MyZR1",
+  "Curated regional track guides with highlighted venues, HPDE opportunities, driving schools, and spectator tips — covering the most important ZR1 track…",
+);
 
 const css = `
 .muted-text-mb12 {

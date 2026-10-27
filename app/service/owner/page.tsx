@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Owner Guides — MyZR1 Maintenance" };
+export const metadata: Metadata = pageMeta(
+  "Owner Guides — MyZR1 Maintenance",
+  "Warranty coverage details, in-dash service reminders, GM-certified mechanic finder, service bulletins, collector care monthly checklist, and top dealer…",
+);
 
 export default function Page() {
   return (

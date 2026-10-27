@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Site Map" };
+export const metadata: Metadata = pageMeta(
+  "Site Map",
+  "Every page on MyZR1 - MyZR1X — organized by section for easy navigation. Use this as your complete reference guide to the site.",
+);
 
 const css = `
 .table-container {

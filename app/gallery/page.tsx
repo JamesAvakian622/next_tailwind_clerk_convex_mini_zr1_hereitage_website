@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Gallery" };
+export const metadata: Metadata = pageMeta(
+  "Gallery",
+  "Generation photo albums from C3 through C8 ZR1X, Corvette Racing factory race cars, the Corvette Index, and the Owners Gallery where members share their…",
+);
 
 export default function Page() {
   return (

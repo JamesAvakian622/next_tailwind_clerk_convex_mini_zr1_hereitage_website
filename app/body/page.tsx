@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = {
-  title: "Body — Exterior & Interior — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "Body — Exterior & Interior — MyZR1",
+  "Active aerodynamics, carbon-ceramic brakes, forged wheels, Michelin tires, magnetic suspension, and a redesigned 2026–27 interior — every physical element…",
+);
 
 export default function Page() {
   return (

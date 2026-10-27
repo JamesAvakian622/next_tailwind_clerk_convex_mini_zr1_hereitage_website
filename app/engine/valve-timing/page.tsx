@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "LT7 Variable Valve Timing (VVT) — MyZR1 Engine",
-};
+export const metadata: Metadata = pageMeta(
+  "LT7 Variable Valve Timing (VVT) — MyZR1 Engine",
+  "How the ZR1 and ZR1X retime their four camshafts on the fly. The LT7 Double Over Head Cam (DOHC) architecture uses independent cam phasing to let the Engine…",
+);
 
 const css = `
 .muted-text-mb14 {

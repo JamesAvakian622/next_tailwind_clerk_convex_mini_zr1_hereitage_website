@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Engine Terminology Glossary — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "Engine Terminology Glossary — MyZR1",
+  "A working dictionary for Corvette ZR1 and ZR1X owners and readers — engine and chassis language, computer and electronics terms, how pages are organized on…",
+);
 
 const css = `
 .text-center {

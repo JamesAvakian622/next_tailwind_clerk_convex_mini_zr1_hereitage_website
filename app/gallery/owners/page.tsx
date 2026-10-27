@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Owners Gallery — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "Owners Gallery — MyZR1",
+  "Browse member-submitted Corvette builds from C1 through ZR1X. Sign in to manage your own garage, upload photos, and share your build with the community.",
+);
 
 const css = `
 .muted-text-mb16 {

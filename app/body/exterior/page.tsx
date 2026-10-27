@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Exterior & Chassis — MyZR1 Body" };
+export const metadata: Metadata = pageMeta(
+  "Exterior & Chassis — MyZR1 Body",
+  "Active aerodynamics, carbon-ceramic brakes, magneto-rheological suspension, forged wheels, Michelin Cup 2R tires, and special limited editions. The ZR1's…",
+);
 
 export default function Page() {
   return (

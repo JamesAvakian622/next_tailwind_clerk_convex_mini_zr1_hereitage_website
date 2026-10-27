@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Corvette Racing Gallery — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "Corvette Racing Gallery — MyZR1",
+  "Six decades of factory GT racing — from the C4 GTP prototype through the C8.R and Z06 GT3.R. Chevrolet's racing program has won Le Mans class victories…",
+);
 
 export default function Page() {
   return (

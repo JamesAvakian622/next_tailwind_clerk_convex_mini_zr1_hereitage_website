@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "C7 ZR1 (2019) — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "C7 ZR1 (2019) — MyZR1",
+  "755 HP supercharged LT5 V8, the most powerful Corvette ever built at that time. The final front-engine ZR1 and the ultimate expression of a 67-year…",
+);
 
 const css = `
 .muted-text-mb14 {

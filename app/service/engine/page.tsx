@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Engine Service — MyZR1 Maintenance",
-};
+export const metadata: Metadata = pageMeta(
+  "Engine Service — MyZR1 Maintenance",
+  "Maintenance schedules, fluid specifications, DCT filter service, battery care, and OEM replacement parts — keeping the LT7 enginein perfect condition.",
+);
 
 const css = `
 .muted-text-mb12 {

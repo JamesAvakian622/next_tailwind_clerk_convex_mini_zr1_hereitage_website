@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Engine & Tech" };
+export const metadata: Metadata = pageMeta(
+  "Engine & Tech",
+  "The most advanced American performance engineering ever produced — 1,064 HP LT7 engineTwin-Turbo flat-plane V8, Tremec 8-speed DCT, E-AWD, and the full…",
+);
 
 export default function Page() {
   return (

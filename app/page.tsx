@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "MyZR1 - MyZR1X — Corvette ZR1 Heritage & Collection",
-  },
-};
+export const metadata: Metadata = pageMeta(
+  "MyZR1 - MyZR1X — Corvette ZR1 Heritage & Collection",
+  "From the legendary 1970 C3 to the electrified 2026 ZR1X Hypercar — photo galleries, rarity guides, engineering deep-dives, performance mods, and owner albums.",
+  { absoluteTitle: true },
+);
 
 const css = `
 .obj-top {

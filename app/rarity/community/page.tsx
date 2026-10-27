@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Community & Clubs — MyZR1 Rarity" };
+export const metadata: Metadata = pageMeta(
+  "Community & Clubs — MyZR1 Rarity",
+  "The people who live and breathe Corvette ZR1 — from the National Corvette Museum in Bowling Green to YouTube channels with millions of subscribers tracking…",
+);
 
 export default function Page() {
   return (

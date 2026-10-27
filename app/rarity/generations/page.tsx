@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Generation Breakdown — MyZR1 Rarity",
-};
+export const metadata: Metadata = pageMeta(
+  "Generation Breakdown — MyZR1 Rarity",
+  "Every generation compared side-by-side — horsepower, torque, top speed, production numbers, and key features across five decades of ZR1 excellence.",
+);
 
 const css = `
 .table-container {

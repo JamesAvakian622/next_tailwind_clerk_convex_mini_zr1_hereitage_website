@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Turbos & Exhaust — MyZR1 Engine" };
+export const metadata: Metadata = pageMeta(
+  "Turbos & Exhaust — MyZR1 Engine",
+  "The largest turbos ever fitted to a production Corvette — paired with a uniquely routed exhaust system, heat exchangers, and a dual-port injection system…",
+);
 
 const css = `
 .muted-text-mb14 {

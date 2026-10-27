@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Interior & Cockpit — MyZR1 Body" };
+export const metadata: Metadata = pageMeta(
+  "Interior & Cockpit — MyZR1 Body",
+  "A driver-focused cockpit redesigned for the 2026–27 model year — performance seats, heads-up display, dual digital screens, Alcantara trim, and complete…",
+);
 
 export default function Page() {
   return (

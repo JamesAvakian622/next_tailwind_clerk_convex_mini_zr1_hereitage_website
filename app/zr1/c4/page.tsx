@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "C4 ZR-1 (1990–1995) — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "C4 ZR-1 (1990–1995) — MyZR1",
+  "The Lotus-engineered LT5 DOHC V8 redefined what an American sports car could be. 405 HP, world speed records, and the most technologically advanced Corvette…",
+);
 
 const css = `
 .muted-text-mb14 {

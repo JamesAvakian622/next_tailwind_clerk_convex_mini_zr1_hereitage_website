@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import PolicyPage, { Section } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy",
-  description:
-    "What cookies MyZR1 - MyZR1X uses, why, and how you can manage them.",
-};
+export const metadata: Metadata = pageMeta(
+  "Cookie Policy",
+  "What cookies MyZR1 - MyZR1X uses, why, and how you can manage them.",
+);
 
 export default function CookiePolicyPage() {
   return (

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Photo Albums — MyZR1 Gallery" };
+export const metadata: Metadata = pageMeta(
+  "Photo Albums — MyZR1 Gallery",
+  "Curated photo collections for every ZR1 generation — from the original 1970 C3 to the electrified 2026 ZR1X, plus the Cool Jimmy personal collection and…",
+);
 
 const css = `
 .muted-text {

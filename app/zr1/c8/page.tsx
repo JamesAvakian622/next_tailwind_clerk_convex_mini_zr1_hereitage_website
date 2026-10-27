@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "C8 ZR1 (2025–2027) — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "C8 ZR1 (2025–2027) — MyZR1",
+  "The mid-engine revolution arrives at full force. 1,064 HP from the LT7 Twin-Turbo flat-plane V8, active aerodynamics producing 1,000+ lb of downforce, and…",
+);
 
 const css = `
 .muted-text-mb14 {

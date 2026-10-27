@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Docs & Downloads — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "Docs & Downloads — MyZR1",
+  "White papers, owner's resources, ZR1 and ZR1X technical documents, media assets, and the GM PDF reference guide — all in one place.",
+);
 
 const css = `
 .muted-text-mb14 {

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import PolicyPage, { Section } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
-  title: "Content Policy",
-  description:
-    "Acceptable use, prohibited content, and intellectual property rules for MyZR1 - MyZR1X.",
-};
+export const metadata: Metadata = pageMeta(
+  "Content Policy",
+  "Acceptable use, prohibited content, and intellectual property rules for MyZR1 - MyZR1X.",
+);
 
 export default function ContentPolicyPage() {
   return (

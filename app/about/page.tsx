@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import AccountSection from "@/components/AccountSection";
 
-export const metadata: Metadata = { title: "About Us" };
+export const metadata: Metadata = pageMeta(
+  "About Us",
+  "An Optical Automation product by Cool Jimmy Software, celebrating the Chevrolet Corvette ZR1 heritage, connecting enthusiasts, and providing the most…",
+);
 
 export default function Page() {
   return (

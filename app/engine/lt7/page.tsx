@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "LT7 engineTwin-Turbo V8 — MyZR1 Engine",
-};
+export const metadata: Metadata = pageMeta(
+  "LT7 engineTwin-Turbo V8 — MyZR1 Engine",
+  "1,064 HP at 7,000 rpm from a 5.5-liter flat-plane crankshaft DOHC V8 — the most powerful Corvette engine ever produced and one of the most technically…",
+);
 
 const css = `
 .muted-text-mb14 {

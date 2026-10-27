@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "ZR1 Collection" };
+export const metadata: Metadata = pageMeta(
+  "ZR1 Collection",
+  "Six generations of American performance excellence — from the legendary 1970 C3 origins to the electrified 2026 ZR1X hypercar. King of the Hill, every era.",
+);
 
 export default function Page() {
   return (

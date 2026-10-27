@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import PolicyPage, { Section } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
-  title: "Terms of Use",
-  description:
-    "Terms of use governing your use of the MyZR1 - MyZR1X website, owners gallery, photo submissions, and account features operated by Optical Automation, LLC.",
-};
+export const metadata: Metadata = pageMeta(
+  "Terms of Use",
+  "Terms of use governing your use of the MyZR1 - MyZR1X website, owners gallery, photo submissions, and account features operated by Optical Automation, LLC.",
+);
 
 const SITE_ROOT = process.env.NEXT_PUBLIC_SITE_URL || "https://www.myzr1.com";
 

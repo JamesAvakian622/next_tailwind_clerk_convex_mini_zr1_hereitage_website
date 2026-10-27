@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Drive Modes & Z-Mode — MyZR1 Engine",
-};
+export const metadata: Metadata = pageMeta(
+  "Drive Modes & Z-Mode — MyZR1 Engine",
+  "The Corvette C8 ZR1 and ZR1X gives the driver two independent custom driving-profile slots: the Z-Mode button on the steering wheel for an aggressive…",
+);
 
 const css = `
 .muted-copy {

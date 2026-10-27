@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "C3 ZR1 (1970–1972) — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "C3 ZR1 (1970–1972) — MyZR1",
+  "The special performance package that launched the ZR1 legend. The LT1 small-block V8 delivered 370 HP in an era when American muscle ruled the roads.",
+);
 
 const css = `
 .muted-text-mb16 {

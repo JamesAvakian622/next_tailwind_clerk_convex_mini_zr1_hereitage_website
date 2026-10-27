@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "ZR1 Timeline 1970–2030 — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "ZR1 Timeline 1970–2030 — MyZR1",
+  "Six decades of milestones — from the first 370 HP C3 package in 1970 to the 1,250+ HP electrified hypercar arriving in 2026 and beyond.",
+);
 
 const css = `
 .text-green {

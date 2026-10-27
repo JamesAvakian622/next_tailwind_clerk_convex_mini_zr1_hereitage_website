@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "ZR1X Mods — MyZR1X Modifications" };
+export const metadata: Metadata = pageMeta(
+  "ZR1X Mods — MyZR1X Modifications",
+  "All ZR1 modification categories plus ZR1X-specific: hybrid battery management, eMotor calibration, E-AWD torque bias tuning, and high-voltage thermal…",
+);
 
 const css = `
 .bg-purple-text-white {

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Acclaims & Accolades — MyZR1 Rarity",
-};
+export const metadata: Metadata = pageMeta(
+  "Acclaims & Accolades — MyZR1 Rarity",
+  "The Corvette ZR1 and ZR1X have earned extraordinary recognition from automotive media, racing organizations, and industry bodies worldwide — proof that…",
+);
 
 const css = `
 .img-grid-mb32 {

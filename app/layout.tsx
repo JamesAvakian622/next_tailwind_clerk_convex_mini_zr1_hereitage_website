@@ -3,24 +3,67 @@ import "./globals.css";
 import Providers from "@/components/Providers";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import {
+  AUTHOR,
+  COPYRIGHT,
+  DEFAULT_OG_IMAGE,
+  PUBLISHER,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+  X_HANDLE,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "MyZR1 - MyZR1X — Corvette ZR1 Heritage & Collection",
-    template: "%s — MyZR1 - MyZR1X",
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "From the legendary 1970 C3 to the electrified 2026 ZR1X Hypercar — photo galleries, rarity guides, engineering deep-dives, performance mods, and owner albums.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  ),
-  icons: { icon: "/favicon.ico" },
-  authors: [{ name: "Cool Jimmy, Optical Automation, LLC" }],
-  creator: "Cool Jimmy, Optical Automation, LLC",
-  publisher: "Optical Automation, LLC",
-  other: {
-    copyright: "© Cool Jimmy, Optical Automation, LLC. All rights reserved.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Corvette ZR1",
+    "Corvette ZR1X",
+    "C8 ZR1",
+    "LT7",
+    "Corvette ZR1 history",
+    "Corvette owners gallery",
+    "TheVetteWeb",
+  ],
+  authors: [{ name: AUTHOR.name, url: AUTHOR.url }],
+  creator: PUBLISHER.name,
+  publisher: PUBLISHER.name,
+  category: "automotive",
+  // Resolved per route against metadataBase, e.g. /engine/lt7 -> https://…/engine/lt7
+  alternates: { canonical: "./" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    url: "./",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: X_HANDLE,
+    creator: X_HANDLE,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE.url],
+  },
+  icons: { icon: "/favicon.ico", apple: "/logo192.png" },
+  formatDetection: { telephone: false },
+  other: { copyright: COPYRIGHT },
 };
 
 export default function RootLayout({
@@ -31,6 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <JsonLd />
         <Providers>
           <Nav />
           {children}

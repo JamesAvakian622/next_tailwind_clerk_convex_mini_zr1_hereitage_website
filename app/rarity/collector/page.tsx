@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Collector Guide — MyZR1 Rarity" };
+export const metadata: Metadata = pageMeta(
+  "Collector Guide — MyZR1 Rarity",
+  "Rarity scores, special edition details, what to look for at auction, and how ZR1 values compare to competing international exotics at every price point.",
+);
 
 const css = `
 .table-container {

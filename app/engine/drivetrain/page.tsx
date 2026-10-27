@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Drivetrain — DCT & E-AWD — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "Drivetrain — DCT & E-AWD — MyZR1",
+  "The Tremec 8-speed DCT transaxle, electronic limited-slip differential, and the ZR1X's E-AWD architecture — the systems that put 1,064+ HP to the road.",
+);
 
 const css = `
 .muted-text-mb14 {

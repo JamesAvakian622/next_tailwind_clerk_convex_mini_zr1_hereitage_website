@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Driving Dynamics — MyZR1 Engine" };
+export const metadata: Metadata = pageMeta(
+  "Driving Dynamics — MyZR1 Engine",
+  "PTM launch control, Z-Mode custom presets, Performance Data Recorder, G-meter, drive modes, traction control, and the full suite of driver-focused systems…",
+);
 
 const css = `
 .muted-text-mb14 {

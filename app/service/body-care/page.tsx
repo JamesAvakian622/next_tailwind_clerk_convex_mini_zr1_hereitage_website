@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = {
-  title: "Body Care & Cleaning — MyZR1 Maintenance",
-};
+export const metadata: Metadata = pageMeta(
+  "Body Care & Cleaning — MyZR1 Maintenance",
+  "Proper care for carbon fiber, carbon-ceramic brakes, Michelin Cup tires, painted surfaces, roof panels, and the Quail Edition's special protocol — keeping…",
+);
 
 export default function Page() {
   return (

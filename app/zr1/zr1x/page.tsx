@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "C8 ZR1X (2026+) — MyZR1X Hypercar",
-};
+export const metadata: Metadata = pageMeta(
+  "C8 ZR1X (2026+) — MyZR1X Hypercar",
+  "Where electrification meets pure racing adrenaline. The ZR1X combines the 1,064 HP LT7 enginewith a front-mounted electric motor for E-AWD, delivering…",
+);
 
 const css = `
 .bg-purple-text-white {

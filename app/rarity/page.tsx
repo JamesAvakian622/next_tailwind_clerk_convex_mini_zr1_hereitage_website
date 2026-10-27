@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Rarity Guide" };
+export const metadata: Metadata = pageMeta(
+  "Rarity Guide",
+  "Generation scarcity scores, market forecasts, special editions, collector rankings, and the communities celebrating these extraordinary machines.",
+);
 
 export default function Page() {
   return (

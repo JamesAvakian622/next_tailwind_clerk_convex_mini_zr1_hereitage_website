@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = { title: "Service & Maintenance — MyZR1" };
+export const metadata: Metadata = pageMeta(
+  "Service & Maintenance — MyZR1",
+  "Everything you need to keep your ZR1 or ZR1X in peak condition — oil changes, DCT filter, brake cleaning, tire care, warranty information, and collector…",
+);
 
 export default function Page() {
   return (

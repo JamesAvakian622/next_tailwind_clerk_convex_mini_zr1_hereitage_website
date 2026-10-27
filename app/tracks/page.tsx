@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 
-export const metadata: Metadata = {
-  title: "USA Race Tracks Directory — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "USA Race Tracks Directory — MyZR1",
+  "The national hub for ZR1 owners, track enthusiasts, and spectators — browse all 50 states, explore featured regional maps, find drivers, and discover HPDE…",
+);
 
 export default function Page() {
   return (

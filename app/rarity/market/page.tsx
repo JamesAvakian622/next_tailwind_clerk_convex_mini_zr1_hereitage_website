@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = { title: "Market Value — MyZR1 Rarity" };
+export const metadata: Metadata = pageMeta(
+  "Market Value — MyZR1 Rarity",
+  "Historical pricing, current market conditions, and collector value projections for every ZR1 generation — the data you need to buy or sell with confidence.",
+);
 
 const css = `
 .table-container {

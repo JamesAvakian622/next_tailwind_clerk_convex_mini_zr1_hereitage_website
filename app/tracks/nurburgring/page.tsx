@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Img from "@/components/Img";
 import PageScope from "@/components/PageScope";
 
-export const metadata: Metadata = {
-  title: "Nürburgring Times & Rivals — MyZR1",
-};
+export const metadata: Metadata = pageMeta(
+  "Nürburgring Times & Rivals — MyZR1",
+  "The ultimate benchmark of automotive capability. Explore how the sheer magnitude of the ZR1 platform stacks up against the fiercest hypercars and track…",
+);
 
 const css = `
 .muted-text-mb14 {
