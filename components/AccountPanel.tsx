@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useConvexAuth, useMutation, useQuery } from "convex/react";
 import { anyApi } from "convex/server";
+import SafeBoundary from "./SafeBoundary";
 import styled from "styled-components";
 
 const Wrap = styled.main`
@@ -106,11 +107,34 @@ const Form = styled.form`
 type Favorite = { _id: string; path: string; title?: string };
 type Submission = { _id: string; title: string; generation: string; status: string };
 
-export default function AccountPanel({ name, email }: { name: string; email: string }) {
+function SavedPagesList() {
   const { isAuthenticated } = useConvexAuth();
   const favorites = useQuery(anyApi.favorites.list, isAuthenticated ? {} : "skip") as Favorite[] | undefined;
   const removeFavorite = useMutation(anyApi.favorites.remove);
 
+  return (
+    <>
+          {favorites === undefined ? (
+            <p className="hint">Loading…</p>
+          ) : favorites.length === 0 ? (
+            <p className="hint">Nothing saved yet.</p>
+          ) : (
+            <ul>
+              {favorites.map((f) => (
+                <li key={f._id}>
+                  <Link href={f.path}>{f.title?.replace(/ — MyZR1 - MyZR1X$/, "") || f.path}</Link>
+                  <button onClick={() => removeFavorite({ id: f._id })} aria-label="Remove">
+                    ✕
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+    </>
+  );
+}
+
+export default function AccountPanel({ name, email }: { name: string; email: string }) {
   const [items, setItems] = useState<Submission[]>([]);
   const [state, setState] = useState<"idle" | "saving" | "done" | "error">("idle");
   const [error, setError] = useState("");
@@ -156,22 +180,9 @@ export default function AccountPanel({ name, email }: { name: string; email: str
         <Panel>
           <h2>Saved pages</h2>
           <p className="hint">Use the ☆ button in the nav on any page to save it here. Stored in Convex.</p>
-          {favorites === undefined ? (
-            <p className="hint">Loading…</p>
-          ) : favorites.length === 0 ? (
-            <p className="hint">Nothing saved yet.</p>
-          ) : (
-            <ul>
-              {favorites.map((f) => (
-                <li key={f._id}>
-                  <Link href={f.path}>{f.title?.replace(/ — MyZR1 - MyZR1X$/, "") || f.path}</Link>
-                  <button onClick={() => removeFavorite({ id: f._id })} aria-label="Remove">
-                    ✕
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
+          <SafeBoundary fallback={<p className="hint">Saved pages are temporarily unavailable.</p>}>
+            <SavedPagesList />
+          </SafeBoundary>
         </Panel>
 
         <Panel>
