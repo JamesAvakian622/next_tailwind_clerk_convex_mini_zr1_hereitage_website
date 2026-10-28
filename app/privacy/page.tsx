@@ -35,17 +35,17 @@ export default function PrivacyPage() {
       <Section>
         <h2>3. Data Storage &amp; Security</h2>
         <p>
-          Data is stored in MongoDB with tenant isolation via organizationId.
-          Traffic is encrypted in transit (HTTPS). Timestamps are stored in ISO
-          8601 format where applicable.
+          Account data is handled by our authentication provider (Clerk). We do
+          not operate our own user database. Traffic is encrypted in transit
+          (HTTPS).
         </p>
       </Section>
       <Section>
         <h2>4. Data Sharing</h2>
         <p>
           We do not sell your personal information. Data may be shared with
-          Clerk (authentication), Stripe (payments), and MongoDB Atlas (data
-          storage) as essential service providers.
+          Clerk (authentication) and our hosting provider as essential service
+          providers.
         </p>
       </Section>
       <Section>

@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 import { Show, UserButton } from "@clerk/nextjs";
 import styled from "styled-components";
 import Img from "./Img";
-import SavePageButton from "./SavePageButton";
-import SafeBoundary from "./SafeBoundary";
 
 const LINKS = [
   { href: "/zr1", label: "ZR1" },
@@ -152,9 +150,6 @@ export default function Nav() {
             />
           )}
           <Show when="signed-in">
-            <SafeBoundary>
-              <SavePageButton />
-            </SafeBoundary>
             <Link href="/account" className="btn btn-outline">
               Account
             </Link>

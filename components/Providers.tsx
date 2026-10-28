@@ -1,23 +1,10 @@
 "use client";
 
-import { ClerkProvider, useAuth } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/ui/themes";
-import { ConvexReactClient } from "convex/react";
-import { ConvexProviderWithClerk } from "convex/react-clerk";
 import GlobalStyle from "./GlobalStyle";
-import StoreUser from "./StoreUser";
-
-const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
-const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const inner = (
-    <>
-      <GlobalStyle />
-      {children}
-    </>
-  );
-
   return (
     <ClerkProvider
       signInUrl="/sign-in"
@@ -32,14 +19,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         },
       }}
     >
-      {convex ? (
-        <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-          <StoreUser />
-          {inner}
-        </ConvexProviderWithClerk>
-      ) : (
-        inner
-      )}
+      <GlobalStyle />
+      {children}
     </ClerkProvider>
   );
 }
