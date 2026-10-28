@@ -2,11 +2,11 @@
  * Single source of truth for site identity, used by metadata, JSON-LD,
  * robots.txt and sitemap.xml.
  *
- * Canonical domain: MyZR1-ZR1X.com. Override per environment with
+ * Canonical domain: TheVetteWeb.com. Override per environment with
  * NEXT_PUBLIC_CANONICAL_URL (e.g. a Vercel preview or http://localhost:3000).
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_CANONICAL_URL || "https://www.myzr1-zr1x.com"
+  process.env.NEXT_PUBLIC_CANONICAL_URL || "https://thevetteweb.com"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "MyZR1 - MyZR1X";
@@ -42,7 +42,6 @@ export const COPYRIGHT =
 export const RELATED_DOMAINS = [
   "http://www.cooljimmy.com",
   "http://www.opticalautomation.com",
-  "https://thevetteweb.com",
 ];
 
 export const SOCIAL_PROFILES = [
