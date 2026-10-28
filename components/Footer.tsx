@@ -167,7 +167,12 @@ export default function Footer() {
     <Wrap className="site-footer">
       <Inner>
         <Brand>
-          <Img src="/CoolJimmy-footer.png" alt="Cool Jimmy" hideOnError />
+          <Img
+            src="/CoolJimmy-footer.png"
+            alt="Cool Jimmy"
+            hideOnError
+            noZoom
+          />
           <h2>My ZR1 / My ZR1X Corvette</h2>
           <p>
             An Optical Automation Product — celebrating Chevrolet Corvette ZR1
