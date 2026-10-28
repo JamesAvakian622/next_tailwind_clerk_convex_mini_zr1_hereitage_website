@@ -6,9 +6,9 @@ import { SITE_URL } from "@/lib/site";
 const PRIVATE = new Set(["account", "api", "sign-in", "sign-up"]);
 
 /** Walk app/ for page.tsx files so new pages are picked up automatically. */
-function routes(dir = path.join(process.cwd(), "app"), prefix = ""): string[] {
+function routes(dir = path.join(/*turbopackIgnore: true*/ process.cwd(), "app"), prefix = ""): string[] {
   const out: string[] = [];
-  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+  for (const e of fs.readdirSync(/*turbopackIgnore: true*/ dir, { withFileTypes: true })) {
     if (
       !e.isDirectory() ||
       e.name.startsWith("_") ||
@@ -17,8 +17,8 @@ function routes(dir = path.join(process.cwd(), "app"), prefix = ""): string[] {
     )
       continue;
     const route = `${prefix}/${e.name}`;
-    if (fs.existsSync(path.join(dir, e.name, "page.tsx"))) out.push(route);
-    out.push(...routes(path.join(dir, e.name), route));
+    if (fs.existsSync(path.join(/*turbopackIgnore: true*/ dir, e.name, "page.tsx"))) out.push(route);
+    out.push(...routes(path.join(/*turbopackIgnore: true*/ dir, e.name), route));
   }
   return out;
 }
