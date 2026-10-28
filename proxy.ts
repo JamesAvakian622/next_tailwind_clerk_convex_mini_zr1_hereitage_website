@@ -1,8 +1,29 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-// Provides Clerk auth context to pages and API routes. Access control is enforced
-// where the data lives (see app/account/page.tsx and app/api/submissions/route.ts).
-export default clerkMiddleware();
+/**
+ * Site-wide gate: every page requires a signed-in Clerk user. Signed-out visitors
+ * are redirected to /sign-in and returned to the page they asked for afterwards.
+ *
+ * Open on purpose:
+ *  - /sign-in, /sign-up (and Clerk's nested callback routes) so people can log in
+ *  - /robots.txt, /sitemap.xml so crawlers can read the rules (they still can't see pages)
+ *  - /api/* handles its own auth and answers 401 JSON rather than redirecting
+ *
+ * Static files (images, css, js, …) are excluded by the matcher below.
+ */
+const OPEN_PATHS = [
+  /^\/sign-in(\/.*)?$/,
+  /^\/sign-up(\/.*)?$/,
+  /^\/robots\.txt$/,
+  /^\/sitemap\.xml$/,
+  /^\/api(\/.*)?$/,
+];
+
+export default clerkMiddleware(async (auth, req) => {
+  const { pathname } = req.nextUrl;
+  if (OPEN_PATHS.some((re) => re.test(pathname))) return;
+  await auth.protect();
+});
 
 export const config = {
   matcher: [

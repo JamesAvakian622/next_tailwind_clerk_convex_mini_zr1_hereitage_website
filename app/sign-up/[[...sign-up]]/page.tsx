@@ -11,9 +11,9 @@ export default function SignUpPage() {
   return (
     <AuthShell
       title="Create Account"
-      blurb="Join the MyZR1 community to submit photo albums, access premium content, and connect with ZR1 owners worldwide."
+      blurb="Join the MyZR1 community. Sign up with Google in one click, or use your email."
     >
-      <SignUp signInUrl="/sign-in" fallbackRedirectUrl="/account" />
+      <SignUp signInUrl="/sign-in" fallbackRedirectUrl="/" />
     </AuthShell>
   );
 }

@@ -25,6 +25,11 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       appearance={{
         theme: dark,
         variables: { colorPrimary: "#38bdf8", colorBackground: "#111827" },
+        // Put "Continue with Google" first, as a full-width button, above the email form.
+        options: {
+          socialButtonsPlacement: "top",
+          socialButtonsVariant: "blockButton",
+        },
       }}
     >
       {convex ? (

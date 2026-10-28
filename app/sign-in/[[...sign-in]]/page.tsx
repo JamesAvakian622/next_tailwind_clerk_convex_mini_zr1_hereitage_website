@@ -11,9 +11,9 @@ export default function SignInPage() {
   return (
     <AuthShell
       title="Sign In"
-      blurb="Access your Owners Gallery, saved pages, and premium features."
+      blurb="Sign in to view MyZR1 - MyZR1X. Continue with Google in one click, or use your email."
     >
-      <SignIn signUpUrl="/sign-up" fallbackRedirectUrl="/account" />
+      <SignIn signUpUrl="/sign-up" fallbackRedirectUrl="/" />
     </AuthShell>
   );
 }
